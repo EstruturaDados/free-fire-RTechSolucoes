@@ -21,7 +21,6 @@ typedef struct {
 } item;
 
 
-
 int main() {
     // Menu principal com opções:
     // 1. Adicionar um item
@@ -42,6 +41,12 @@ int main() {
 
 // Enum CriterioOrdenacao:
 // Define os critérios possíveis para a ordenação dos itens (nome, tipo ou prioridade).
+typedef enum {
+    ORDENAR_NOME,
+    ORDENAR_TIPO,
+    ORDENAR_PRIORIDADE
+} criterioOrdenacao;
+
 
 // Vetor mochila:
 // Armazena até 10 itens coletados.
