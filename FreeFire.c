@@ -51,6 +51,29 @@ typedef enum {
 // Vetor mochila:
 // Armazena até 10 itens coletados.
 // Variáveis de controle: numItens (quantidade atual), comparacoes (análise de desempenho), ordenadaPorNome (para controle da busca binária).
+void inserirItem(Item mochila[]) {
+    if (numItens >= MAX_ITENS) {
+        printf("\nMochila cheia! Não é possível adicionar mais itens.\n");
+        return;
+    }
+
+    printf("\n=== Adicionar Item ===\n");
+    printf("Nome: ");
+    scanf(" %[^\n]", mochila[numItens].nome);
+
+    printf("Tipo: ");
+    scanf(" %[^\n]", mochila[numItens].tipo);
+
+    printf("Quantidade: ");
+    scanf("%d", &mochila[numItens].quantidade);
+
+    printf("Prioridade (1 a 5): ");
+    scanf("%d", &mochila[numItens].prioridade);
+
+    numItens++;
+    ordenadaPorNome = false; 
+    printf("Item adicionado com sucesso!\n");
+}
 
 // limparTela():
 // Simula a limpeza da tela imprimindo várias linhas em branco.
