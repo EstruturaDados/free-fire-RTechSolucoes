@@ -77,6 +77,11 @@ void inserirItem(Item mochila[]) {
 
 // limparTela():
 // Simula a limpeza da tela imprimindo várias linhas em branco.
+void limparTela() {
+    for (int i = 0; i < 30; i++) {
+        printf("\n");
+    }
+}
 
 // exibirMenu():
 // Apresenta o menu principal ao jogador, com destaque para status da ordenação.
