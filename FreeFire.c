@@ -7,6 +7,20 @@
 // Nível: Mestre
 // Este programa simula o gerenciamento avançado de uma mochila com componentes coletados durante a fuga de uma ilha.
 // Ele introduz ordenação com critérios e busca binária para otimizar a gestão dos recursos.
+#define MAX_ITENS 10
+#define TAM_STRING 30
+
+// Struct Item:
+// Representa um componente com nome, tipo, quantidade e prioridade (1 a 5).
+// A prioridade indica a importância do item na montagem do plano de fuga.
+typedef struct {
+    char nome[TAM_STRING];
+    int tipo[TAM_STRING];
+    int quantidade;
+    int prioridade[]
+} item;
+
+
 
 int main() {
     // Menu principal com opções:
@@ -20,12 +34,11 @@ int main() {
     // A estrutura switch trata cada opção chamando a função correspondente.
     // A ordenação e busca binária exigem que os dados estejam bem organizados.
 
+
     return 0;
 }
 
-// Struct Item:
-// Representa um componente com nome, tipo, quantidade e prioridade (1 a 5).
-// A prioridade indica a importância do item na montagem do plano de fuga.
+
 
 // Enum CriterioOrdenacao:
 // Define os critérios possíveis para a ordenação dos itens (nome, tipo ou prioridade).
@@ -44,6 +57,26 @@ int main() {
 // Adiciona um novo componente à mochila se houver espaço.
 // Solicita nome, tipo, quantidade e prioridade.
 // Após inserir, marca a mochila como "não ordenada por nome".
+// Função para adicionar um item
+void inserirItem(Item mochila[], int *total) {
+    if (*total >= MAX_ITENS) {
+        printf("\nMochila cheia! Não é possível adicionar mais itens.\n");
+        return;
+    }
+
+    printf("\n=== Adicionar Item ===\n");
+    printf("Nome: ");
+    scanf(" %[^\n]", mochila[*total].nome);
+
+    printf("Tipo: ");
+    scanf(" %[^\n]", mochila[*total].tipo);
+
+    printf("Quantidade: ");
+    scanf("%d", &mochila[*total].quantidade);
+
+    (*total)++;
+    printf("Item adicionado com sucesso!\n");
+}
 
 // removerItem():
 // Permite remover um componente da mochila pelo nome.
